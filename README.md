@@ -24,5 +24,6 @@ Password generator app to give you strong password
 
 ## Rules
 * **Minimum password length** must be 8 characters.
+* **Maximum password length** must be 256 characters.
 * **Minimum options number** must be 1 option.
 * You can't copy password input if its empty.
