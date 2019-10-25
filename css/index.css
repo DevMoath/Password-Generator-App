@@ -1,0 +1,14 @@
+.bg-custom {
+    background: linear-gradient(110deg, rgb(79, 80, 83) 6%, rgb(15, 21, 56) 95%);
+}
+.outline-none:focus, .outline-none:active {
+    outline: none!important;
+    box-shadow: none!important;
+    border: none!important;
+}
+.custom-shadow {
+    box-shadow:0 0 0 .2rem rgba(0,123,255,.25);
+}
+.border-custom {
+    border-color: #CED4DA;
+}
