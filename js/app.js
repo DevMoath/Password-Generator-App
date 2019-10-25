@@ -108,7 +108,18 @@ class PasswordGenerator {
                 showConfirmButton: false,
                 timer: 3000
             });
-            this.dom.uppercase.focus();
+            this.dom.length.focus();
+            return;
+        } else if (length > 256) {
+            swal.fire({
+                type: 'error',
+                title: 'The maximum length of password is 256',
+                toast: true,
+                position: 'top-right',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            this.dom.length.focus();
             return;
         }
 
