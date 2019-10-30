@@ -11,6 +11,7 @@ Password generator app to give you strong password
 * CSS3
 * [Bootstrap 4](https://getbootstrap.com/)
 * Vanilla JavaScript
+* [SweetAlert2](https://sweetalert2.github.io/)
 
 ## App Functions
 * Generate new password
