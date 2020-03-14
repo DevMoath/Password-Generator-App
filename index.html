@@ -1,129 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142122097-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Password Generator</title>
+        <link rel="icon" href="img/logo.png">
+        <!-- meta data -->
+        <meta name="description" content="Password generator app to give you strong password.">
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="Password Generator">
+        <meta itemprop="description" content="Password generator app to give you strong password.">
+        <meta itemprop="image" content="https://password-app.netlify.com/img/logo.png">
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://password-app.netlify.com/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Password Generator">
+        <meta property="og:description" content="Password generator app to give you strong password.">
+        <meta property="og:image" content="https://password-app.netlify.com/img/logo.png">
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@Dev_Moath">
+        <meta name="twitter:title" content="Password Generator">
+        <meta name="twitter:description" content="Password generator app to give you strong password.">
+        <meta name="twitter:image" content="https://password-app.netlify.com/img/logo.png">
+        <link rel="apple-touch-icon" sizes="128x128" href="img/logo.png">
+        <script src="src/bundle.js" defer></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142122097-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        function gtag() {dataLayer.push(arguments);}
+            function gtag() {dataLayer.push(arguments);}
 
-        gtag('js', new Date());
+            gtag("js", new Date());
 
-        gtag('config', 'UA-142122097-2');
-    </script>
-
-    <meta charset="UTF-8">
-    <title>Password Generator</title>
-
-    <!-- meta data -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="description" content="Password generator app to give you strong password.">
-    <meta property="og:title" content="Password Generator"/>
-    <meta property="og:url" content="https://password-generator.cf/"/>
-    <meta property="og:description" content="Password generator app to give you strong password.">
-    <meta property="og:image" content="img/logo.png">
-
-    <link rel="icon" href="img/logo.png">
-    <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/sweetalert2@8.js"></script>
-    <script src="js/app.js" defer></script>
-</head>
-<body>
-
-<div class="container-fluid bg-custom vh-100">
-
-    <div class="d-flex align-items-center my-auto h-100 col-md-7 mx-auto">
-        <div class="card w-100 h-auto bg-light">
-            <div class="card-header">
-                <h4>Password Generator</h4>
-            </div>
-            <div class="card-body">
-
-                <div class="input-group mb-2 mx-auto border border-custom rounded">
-                    <input type="text" class="form-control bg-transparent outline-none border-0 text-dark"
-                           style="font-size: 20px" id="result"
-                           readonly>
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary border-0 rounded outline-none"
-                                type="button" id="copy">
-                            <i class="far fa-clipboard fa-fw"></i>
+            gtag("config", "UA-142122097-2");
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid bg-custom vh-100">
+            <div class="d-flex align-items-center flex-column my-auto h-100 col-md-7 mx-auto">
+                <div class="my-4">
+                    <div class="text-center mb-2">
+                        <a href="https://twitter.com/Dev_Moath"
+                           class="btn btn-lg rounded-pill text-light bg-primary shadow-lg">
+                            <i class="fab fa-twitter fa-fw"></i>
+                        </a>
+                        <a href="https://github.com/DevMoath"
+                           class="btn btn-lg rounded-pill text-light bg-dark shadow-lg ml-2">
+                            <i class="fab fa-github fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card w-100 h-auto bg-light">
+                    <div class="card-header">
+                        <h4>Password Generator</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-2 mx-auto border border-custom rounded">
+                            <input type="text" class="form-control bg-transparent outline-none border-0 text-dark"
+                                   style="font-size: 20px" id="result"
+                                   readonly>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary border-0 rounded outline-none"
+                                        type="button" id="copy">
+                                    <i class="far fa-clipboard fa-fw"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mx-auto mt-3">
+                            <div class="alert alert-danger fade show d-none" role="alert" id="alert">
+                            </div>
+                            <div class="form-group d-flex justify-content-end">
+                                <label for="length" class="col-form-label w-100">Password length</label>
+                                <div class="">
+                                    <input type="number" class="form-control ml-auto" id="length" value="10" min="8"
+                                           max="256">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="uppercase" checked>
+                                    <label class="custom-control-label" for="uppercase">
+                                        Include uppercase letters
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="lowercase" checked>
+                                    <label class="custom-control-label" for="lowercase">
+                                        Include lowercase letters
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="number" checked>
+                                    <label class="custom-control-label" for="number">Include numbers</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="symbol" checked>
+                                    <label class="custom-control-label" for="symbol">Include symbols</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary d-block mx-auto" id="generate">
+                            Generate password
                         </button>
                     </div>
                 </div>
-
-                <div class="mx-auto mt-3">
-
-                    <div class="alert alert-danger fade show d-none" role="alert" id="alert">
-
-                    </div>
-
-                    <div class="form-group d-flex justify-content-end">
-                        <label for="length" class="col-form-label w-100">Password length</label>
-                        <div class="">
-                            <input type="number" class="form-control ml-auto" id="length" value="10" min="8" max="256">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="uppercase" checked>
-                            <label class="custom-control-label" for="uppercase">Include uppercase letters</label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="lowercase" checked>
-                            <label class="custom-control-label" for="lowercase">Include lowercase letters</label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="number" checked>
-                            <label class="custom-control-label" for="number">Include numbers</label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="symbol" checked>
-                            <label class="custom-control-label" for="symbol">Include symbols</label>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
-            <div class="card-footer">
-                <button class="btn btn-primary d-block mx-auto" id="generate">
-                    Generate password
-                </button>
-            </div>
-
         </div>
-
-    </div>
-
-    <div class="fixed-bottom">
-        <div class="text-center mb-2">
-            <a href="https://twitter.com/Dev_Moath"
-               class="btn btn-lg rounded-pill text-light bg-primary shadow-lg">
-                <i class="fab fa-twitter fa-fw"></i>
-            </a>
-            <a href="https://github.com/DevMoath"
-               class="btn btn-lg rounded-pill text-light bg-dark shadow-lg ml-2">
-                <i class="fab fa-github fa-fw"></i>
-            </a>
-        </div>
-    </div>
-
-</div>
-
-</body>
+    </body>
 </html>
