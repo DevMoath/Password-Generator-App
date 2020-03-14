@@ -10,9 +10,12 @@ Password generator app to give you strong password
 ## Technologies Used
 * HTML
 * CSS
-* [Bootstrap](https://getbootstrap.com/)
-* Vanilla JavaScript
-* [SweetAlert2](https://sweetalert2.github.io/)
+* [Bootstrap 4](https://getbootstrap.com/)
+* JavaScript
+* [SweetAlert 2](https://sweetalert2.github.io/)
+* [fontawesome](https://fontawesome.com/)
+* [webpack](https://webpack.js.org/)
+* [npm](https://www.npmjs.com/)
 
 ## App Functions
 * Generate new password
