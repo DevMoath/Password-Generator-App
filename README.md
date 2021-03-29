@@ -1,12 +1,6 @@
 # Password Generator App
 Password generator app to give you strong password
 
-## Table of Content
-* [Technologies Used](#technologies-used)
-* [App Functions](#app-functions)
-* [Rules](#rules)
-* [License](#license)
-
 ## Technologies Used
 * HTML
 * CSS
@@ -32,6 +26,3 @@ Password generator app to give you strong password
 * ``Maximum password length`` must be 256 characters.
 * ``Minimum options number`` must be 1 option.
 * You can't copy password input if its empty.
-
-## License
-The Password Generator App is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
