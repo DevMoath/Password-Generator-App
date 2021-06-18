@@ -13,7 +13,8 @@
     "license": "MIT",
     "author": "Moath Alhajri",
     "scripts": {
-        "bulid": "webpack",
+        "dev": "webpack --watch",
+        "build": "webpack",
         "fixer": "npx prettier --write . "
     },
     "dependencies": {
