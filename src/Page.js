@@ -30,15 +30,14 @@ export default class Page {
         });
 
         this.copy.addEventListener('click', () => {
-
-            if(this.result.value === '') {
+            if (this.result.value === '') {
                 swal.fire({
                     type: 'error',
                     title: 'Generate password first',
                     toast: true,
                     position: 'top-right',
                     showConfirmButton: false,
-                    timer: 3000
+                    timer: 3000,
                 });
                 this.generate.focus();
                 return;
@@ -48,7 +47,7 @@ export default class Page {
             this.result.setSelectionRange(0, 99999); /*For mobile devices*/
 
             /* Copy the text inside the text field */
-            document.execCommand("copy");
+            document.execCommand('copy');
 
             swal.fire({
                 type: 'success',
@@ -56,7 +55,7 @@ export default class Page {
                 toast: true,
                 position: 'top-right',
                 showConfirmButton: false,
-                timer: 3000
+                timer: 3000,
             });
         });
     }
@@ -70,7 +69,7 @@ export default class Page {
             this.lowercase,
             this.number,
             this.symbol,
-            this.generate
+            this.generate,
         ];
     }
 }

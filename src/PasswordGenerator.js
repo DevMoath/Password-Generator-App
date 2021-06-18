@@ -21,15 +21,14 @@ export default class PasswordGenerator {
     }
 
     generatePassword(lower, upper, number, symbol, length) {
-
-        if(length < 8) {
+        if (length < 8) {
             swal.fire({
                 type: 'error',
                 title: 'The minimum length of password is 8',
                 toast: true,
                 position: 'top-right',
                 showConfirmButton: false,
-                timer: 3000
+                timer: 3000,
             });
             this.dom.length.focus();
             return;
@@ -40,27 +39,22 @@ export default class PasswordGenerator {
                 toast: true,
                 position: 'top-right',
                 showConfirmButton: false,
-                timer: 3000
+                timer: 3000,
             });
             this.dom.length.focus();
             return;
         }
 
-        const types = [
-            {lower},
-            {upper},
-            {number},
-            {symbol}
-        ].filter(item => Object.values(item)[0]);
+        const types = [{ lower }, { upper }, { number }, { symbol }].filter((item) => Object.values(item)[0]);
 
-        if(types.length === 0) {
+        if (types.length === 0) {
             swal.fire({
                 type: 'error',
                 title: 'Select at least one type',
                 toast: true,
                 position: 'top-right',
                 showConfirmButton: false,
-                timer: 3000
+                timer: 3000,
             });
             this.dom.uppercase.focus();
             return;

@@ -2,20 +2,21 @@
     "name": "password-generator-app",
     "version": "1.0.0",
     "description": "Password generator app to give you strong password",
-    "scripts": {
-        "bulid": "webpack"
+    "homepage": "https://github.com/DevMoath/password-generator-app#readme",
+    "bugs": {
+        "url": "https://github.com/DevMoath/password-generator-app/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/DevMoath/Password-Generator-App.git"
+        "url": "git+https://github.com/DevMoath/password-generator-app.git"
     },
-    "author": "Moath Alhajri",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/DevMoath/Password-Generator-App/issues"
+    "author": "Moath Alhajri",
+    "scripts": {
+        "bulid": "webpack",
+        "fixer": "npx prettier --write . "
     },
-    "homepage": "https://github.com/DevMoath/Password-Generator-App#readme",
-    "devDependencies": {
+    "dependencies": {
         "@fortawesome/fontawesome-free": "^5.12.1",
         "@popperjs/core": "^2.0.6",
         "@types/node": "^13.7.4",
@@ -25,8 +26,11 @@
         "moment": "^2.24.0",
         "popper.js": "^1.16.1",
         "style-loader": "^1.1.3",
+        "sweetalert2": "^9.10.0",
         "webpack": "^4.41.6",
-        "webpack-cli": "^3.3.11",
-        "sweetalert2": "^9.10.0"
+        "webpack-cli": "^3.3.11"
+    },
+    "devDependencies": {
+        "prettier": "^2.3.1"
     }
 }
