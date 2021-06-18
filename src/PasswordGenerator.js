@@ -23,7 +23,7 @@ export default class PasswordGenerator {
     generatePassword(lower, upper, number, symbol, length) {
         if (length < 8) {
             swal.fire({
-                type: 'error',
+                icon: 'error',
                 title: 'The minimum length of password is 8',
                 toast: true,
                 position: 'top-right',
@@ -34,7 +34,7 @@ export default class PasswordGenerator {
             return;
         } else if (length > 256) {
             swal.fire({
-                type: 'error',
+                icon: 'error',
                 title: 'The maximum length of password is 256',
                 toast: true,
                 position: 'top-right',
@@ -49,7 +49,7 @@ export default class PasswordGenerator {
 
         if (types.length === 0) {
             swal.fire({
-                type: 'error',
+                icon: 'error',
                 title: 'Select at least one type',
                 toast: true,
                 position: 'top-right',

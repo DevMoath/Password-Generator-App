@@ -32,7 +32,7 @@ export default class Page {
         this.copy.addEventListener('click', () => {
             if (this.result.value === '') {
                 swal.fire({
-                    type: 'error',
+                    icon: 'error',
                     title: 'Generate password first',
                     toast: true,
                     position: 'top-right',
@@ -50,7 +50,7 @@ export default class Page {
             document.execCommand('copy');
 
             swal.fire({
-                type: 'success',
+                icon: 'success',
                 title: 'Password Copied',
                 toast: true,
                 position: 'top-right',
