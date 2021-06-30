@@ -2,19 +2,19 @@
     "name": "password-generator-app",
     "version": "1.0.0",
     "description": "Password generator app to give you strong password",
+    "license": "MIT",
+    "author": "Moath Alhajri",
     "homepage": "https://github.com/DevMoath/password-generator-app#readme",
-    "bugs": {
-        "url": "https://github.com/DevMoath/password-generator-app/issues"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/DevMoath/password-generator-app.git"
     },
-    "license": "MIT",
-    "author": "Moath Alhajri",
+    "bugs": {
+        "url": "https://github.com/DevMoath/password-generator-app/issues"
+    },
     "scripts": {
-        "dev": "webpack --watch",
         "build": "webpack",
+        "dev": "webpack --watch",
         "fixer": "npx prettier --write . "
     },
     "dependencies": {
@@ -33,5 +33,11 @@
     },
     "devDependencies": {
         "prettier": "^2.3.1"
+    },
+    "prettier": {
+        "printWidth": 120,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "es5"
     }
 }
